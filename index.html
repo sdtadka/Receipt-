@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSS College Receipt Portal</title>
+    <style>
+        :root {
+            --accent: #00e5ff;
+            --accent2: #4facfe;
+            --glass-bg: rgba(15, 15, 15, 0.8);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text: #ffffff;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #050505;
+            overflow: hidden;
+            background-image: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+        }
+
+        .portal {
+            width: 90%;
+            max-width: 380px;
+            padding: 30px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            border: 1px solid var(--glass-border);
+            text-align: center;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+        }
+
+        h1 { font-size: 1.5rem; margin-bottom: 8px; font-weight: 700; color: var(--accent); }
+        p { font-size: 0.9rem; opacity: 0.7; margin-bottom: 25px; }
+
+        input {
+            width: 100%;
+            padding: 16px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        input:focus { border-color: var(--accent); box-shadow: 0 0 15px rgba(0,229,255,0.1); }
+
+        button {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            border: none;
+            border-radius: 14px;
+            color: #000;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:active { transform: scale(0.97); }
+
+        .status { margin-top: 15px; font-size: 0.85rem; color: var(--accent2); }
+    </style>
+</head>
+<body>
+
+<div class="portal">
+    <h1>RECEIPT PORTAL</h1>
+    <p>R.S.S Science College, Sitamarhi</p>
+    
+    <input type="text" id="uid" placeholder="Enter Student UID" autocomplete="off">
+    <button onclick="printReceipt()">Generate & Print PDF</button>
+    <div class="status" id="status"></div>
+</div>
+
+<script>
+function printReceipt() {
+  const uid = document.getElementById("uid").value.trim();
+  const status = document.getElementById("status");
+
+  if (!uid) {
+    status.textContent = "Please enter UID";
+    return;
+  }
+
+  status.textContent = "Preparing document...";
+
+  const targetURL =
+    "https://elibrary.rsssc.org/GraduationERP/Student/Admission/PaymentSuccess.aspx" +
+    "?TranID=aa1e6c62c5c4c44f9691&amt=900&uid=" + encodeURIComponent(uid);
+
+  // सादिक भाई, यहाँ आपका "Exact Original Logic" है जो एक पेज पर काम करता है
+  const blobHTML = `
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+@page { size: A4; margin: 12mm; }
+@media print {
+  body { margin: 0; zoom: 0.95; } /* यह ज़ूम 0.95 ही इसे 1 पेज पर रखता है */
+}
+</style>
+</head>
+<body>
+<iframe src="${targetURL}"
+        style="width:100%;height:100vh;border:none;"
+        onload="setTimeout(() => window.print(), 800)">
+</iframe>
+</body>
+</html>
+`;
+
+  const blob = new Blob([blobHTML], { type: "text/html" });
+  const blobURL = URL.createObjectURL(blob);
+
+  const iframe = document.createElement("iframe");
+  iframe.style.position = "fixed";
+  iframe.style.width = "0";
+  iframe.style.height = "0";
+  iframe.style.border = "0";
+  iframe.src = blobURL;
+
+  document.body.appendChild(iframe);
+
+  status.textContent = "Opening print dialog...";
+
+  setTimeout(() => {
+    URL.revokeObjectURL(blobURL);
+  }, 5000);
+}
+</script>
+
+</body>
+</html>
+
