@@ -42,118 +42,38 @@
 
         @media (min-width: 1024px) {
             .page-container { max-width: 800px; }
-            h1 { font-size: 2.8rem !important; margin-bottom: 20px !important; }
-            input { padding: 24px !important; font-size: 22px !important; border-radius: 20px !important; }
-            .btn-download { padding: 24px !important; font-size: 22px !important; border-radius: 20px !important; }
+            h1 { font-size: 2.8rem !important; }
+            input, .btn-download { padding: 24px !important; font-size: 22px !important; border-radius: 20px !important; }
             .header-img { max-width: 400px !important; }
-            .alert-text { font-size: 15px !important; }
-            body { padding-bottom: 120px; }
         }
 
-        .header-img {
-            width: 100%;
-            max-width: 260px;
-            margin: 0 auto 25px;
-            display: block;
-        }
+        .header-img { width: 100%; max-width: 260px; margin: 0 auto 25px; display: block; }
+        .full-divider { height: 4px; width: 100%; background: linear-gradient(to right, transparent, var(--kattayi), transparent); margin-bottom: 35px; border-radius: 2px; }
+        h1 { font-size: 1.8rem; font-weight: 800; margin-bottom: 15px; color: #0f172a; }
 
-        .full-divider {
-            height: 4px;
-            width: 100%;
-            background: linear-gradient(to right, transparent, var(--kattayi), transparent);
-            margin-bottom: 35px;
-            border-radius: 2px;
-        }
-
-        h1 { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 15px; color: #0f172a; }
-
-        .alert-container {
-            background: var(--alert-bg);
-            border-radius: 14px;
-            margin-bottom: 40px;
-            padding: 15px 0;
-            overflow: hidden;
-            display: flex;
-        }
-
+        .alert-container { background: var(--alert-bg); border-radius: 14px; margin-bottom: 40px; padding: 15px 0; overflow: hidden; display: flex; }
         .marquee-content { display: flex; width: max-content; animation: infiniteScroll 20s linear infinite; }
         .alert-text { font-size: 13px; font-weight: 700; color: var(--alert-text); padding: 0 60px; white-space: nowrap; }
         @keyframes infiniteScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-        .service-selection {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .service-btn {
-            flex: 1;
-            padding: 15px;
-            background: #f8fafc;
-            border: 2px solid #e2e8f0;
-            border-radius: 15px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--text-sub);
-            transition: 0.3s;
-        }
-
-        .service-btn.active {
-            border-color: var(--primary);
-            background: #eff6ff;
-            color: var(--primary);
-            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.1);
-        }
+        .service-selection { display: flex; gap: 15px; margin-bottom: 25px; }
+        .service-btn { flex: 1; padding: 15px; background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 15px; cursor: pointer; font-size: 14px; font-weight: 700; color: var(--text-sub); transition: 0.3s; }
+        .service-btn.active { border-color: var(--primary); background: #eff6ff; color: var(--primary); }
 
         .input-group { margin-bottom: 30px; text-align: left; width: 100%; }
-        .label-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; padding: 0 5px; }
-        label { font-size: 13px; font-weight: 800; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.05em; }
-
-        .btn-login {
-            text-decoration: none; font-size: 12px; font-weight: 800; color: var(--primary);
-            background: #eff6ff; padding: 6px 15px; border-radius: 10px; transition: 0.3s;
-        }
-
-        input { 
-            width: 100%; padding: 20px; background: #f8fafc; border: 2px solid #e2e8f0; 
-            border-radius: 18px; color: var(--text-main); font-size: 18px; font-weight: 600; 
-            outline: none; text-align: center; transition: 0.3s;
-        }
+        label { font-size: 13px; font-weight: 800; color: var(--text-sub); text-transform: uppercase; display: block; margin-bottom: 12px; }
+        input { width: 100%; padding: 20px; background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 18px; color: var(--text-main); font-size: 18px; font-weight: 600; outline: none; text-align: center; }
         input:focus { border-color: var(--primary); background: #fff; }
 
-        .btn-download { 
-            width: 100%; padding: 20px; background: var(--primary); border: none; 
-            border-radius: 18px; color: #ffffff; font-weight: 700; font-size: 18px; 
-            cursor: pointer; transition: 0.4s; box-shadow: 0 15px 30px -5px rgba(37, 99, 235, 0.4);
-        }
-        .btn-download:hover { transform: translateY(-3px); box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.5); }
+        .btn-download { width: 100%; padding: 20px; background: var(--primary); border: none; border-radius: 18px; color: #ffffff; font-weight: 700; font-size: 18px; cursor: pointer; box-shadow: 0 15px 30px -5px rgba(37, 99, 235, 0.4); }
 
-        .footer-area {
-            margin-top: 60px; 
-            padding-top: 40px;
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center;
-            border-top: 1px solid #f1f5f9; 
-            width: 100%;
-            margin-bottom: 20px; 
-        }
-        .copyright { font-size: 12px; color: #94a3b8; font-weight: 800; letter-spacing: 0.1em; }
+        .footer-area { margin-top: 60px; padding: 40px 0; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; width: 100%; }
+        .copyright { font-size: 12px; color: #94a3b8; font-weight: 800; }
 
+        /* Social Share */
         .share-container { position: relative; width: 50px; height: 50px; }
-        .main-share-btn {
-            width: 50px; height: 50px; background: var(--primary); color: white;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            cursor: pointer; z-index: 100; position: relative; font-size: 20px;
-        }
-        .social-menu a {
-            position: absolute; width: 42px; height: 42px; background: white;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            border: 1px solid #e2e8f0; text-decoration: none; font-size: 18px;
-            opacity: 0; pointer-events: none; top: 4px; left: 4px;
-            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); transform: scale(0);
-        }
+        .main-share-btn { width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 20px; }
+        .social-menu a { position: absolute; width: 42px; height: 42px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid #e2e8f0; text-decoration: none; font-size: 18px; opacity: 0; pointer-events: none; top: 4px; left: 4px; transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); transform: scale(0); }
         .share-container.active .social-menu a { opacity: 1; pointer-events: auto; }
         .share-container.active .social-menu a:nth-child(1) { transform: translate(0px, -80px) scale(1); color: #25D366; }
         .share-container.active .social-menu a:nth-child(2) { transform: translate(-80px, 0px) scale(1); color: #1877F2; }
@@ -162,12 +82,6 @@
         .share-container.active .social-menu a:nth-child(5) { transform: translate(-60px, 60px) scale(1); color: #FF0000; }
 
         .status { margin-top: 20px; font-size: 15px; color: var(--primary); font-weight: 800; }
-
-        /* प्रिंट के लिए विशेष CSS जो रसीद को सही शेप में रखेगा */
-        @media print {
-            body * { visibility: hidden; }
-            #printFrame { visibility: visible; position: fixed; left: 0; top: 0; width: 100%; height: 100%; }
-        }
     </style>
 </head>
 <body>
@@ -175,34 +89,30 @@
 <div class="page-container">
     <img src="https://rsssc.org/assest/img/rsss-logo.jpeg" alt="RSS College Logo" class="header-img">
     <div class="full-divider"></div>
-    
     <h1>R.S.S SCIENCE COLLEGE, SITAMARHI</h1>
     
     <div class="alert-container">
         <div class="marquee-content">
-            <div class="alert-text">⚠️ सूचना: केवल वैध यूआईडी का उपयोग करें | रिसिप्ट डाउनलोड करने के लिए लॉगिन ज़रूरी है | धन्यवाद 🙏 !</div>
-            <div class="alert-text">⚠️ सूचना: केवल वैध यूआईडी का उपयोग करें | रिसिप्ट डाउनलोड करने के लिए लॉगिन ज़रूरी है | धन्यवाद 🙏 !</div>
+            <div class="alert-text">⚠️ सूचना: वैध यूआईडी का उपयोग करें | रिसिप्ट डाउनलोड करने के लिए लॉगिन ज़रूरी है | धन्यवाद 🙏 !</div>
+            <div class="alert-text">⚠️ सूचना: वैध यूआईडी का उपयोग करें | रिसिप्ट डाउनलोड करने के लिए लॉगिन ज़रूरी है | धन्यवाद 🙏 !</div>
         </div>
     </div>
 
     <div class="service-selection">
-        <button class="service-btn active" onclick="selectService('receipt', this)">Fee Receipt </button>
+        <button class="service-btn active" onclick="selectService('receipt', this)">Fee Receipt</button>
         <button class="service-btn" onclick="selectService('shapath', this)">शपथ पत्र</button>
     </div>
     
     <div class="input-group">
-        <div class="label-row">
-            <label id="serviceLabel">Fee Receipt Download</label>
-            <a href="https://elibrary.rsssc.org/GraduationERP/Student/Admission/LoginPage.aspx" class="btn-login">Login Account</a>
-        </div>
+        <label id="serviceLabel">Fee Receipt Download</label>
         <input type="text" id="uid" placeholder="Enter Student UID" autocomplete="off">
     </div>
 
-    <button class="btn-download" onclick="printReceipt()">Download & Print</button>
+    <button class="btn-download" onclick="generateAndPrint()">Download & Print</button>
     <div class="status" id="status"></div>
 
     <div class="footer-area">
-        <div class="copyright">  © Copyright 2026 By SADIK HUSAIN</div>
+        <div class="copyright">© 2026 By SADIK HUSAIN</div>
         <div class="share-container" id="shareBox">
             <div class="main-share-btn" onclick="toggleShare()"><i class="fas fa-share-nodes"></i></div>
             <div class="social-menu">
@@ -216,8 +126,6 @@
     </div>
 </div>
 
-<iframe id="printFrame" style="display:none;"></iframe>
-
 <script>
 let selectedService = 'receipt'; 
 
@@ -227,20 +135,17 @@ function selectService(service, btn) {
     selectedService = service;
     document.querySelectorAll('.service-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    document.getElementById('serviceLabel').innerText = service === 'receipt' ? 'Free Receipt Download' : 'Shapath Patra Download';
-    document.getElementById('status').innerText = '';
+    document.getElementById('serviceLabel').innerText = service === 'receipt' ? 'Fee Receipt Download' : 'Shapath Patra Download';
 }
 
-function printReceipt() {
+function generateAndPrint() {
   const uidInput = document.getElementById("uid");
   const uid = uidInput.value.trim();
   const status = document.getElementById("status");
-  const printFrame = document.getElementById("printFrame");
 
   if (!uid) { status.textContent = "❌ Please enter UID"; return; }
   
-  status.textContent = "⏳ Preparing Single Page PDF...";
-  uidInput.value = ""; 
+  status.textContent = "⏳ Opening Print Tab...";
 
   let targetURL = "";
   if (selectedService === 'receipt') {
@@ -249,27 +154,26 @@ function printReceipt() {
     targetURL = "https://elibrary.rsssc.org/GraduationERP/Student/Admission/SapathPatra.aspx?uid=" + encodeURIComponent(uid);
   }
 
-  // सादिक भाई, यहाँ हमने Blob को हटाकर सीधे इसी पेज के Iframe में URL लोड किया है
-  // इससे 'Same-Origin' पॉलिसी की वजह से आपका लॉगिन बना रहेगा
-  printFrame.src = targetURL;
+  // सादिक भाई, यहाँ 'New Tab' का सीधा इस्तेमाल किया गया है
+  const printWin = window.open(targetURL, '_blank');
 
-  printFrame.onload = function() {
-    status.textContent = "✅ Ready! Opening Print Dialog...";
-    
-    // थोड़ा सा समय देना ज़रूरी है ताकि कंटेंट पूरी तरह लोड हो जाए
-    setTimeout(() => {
-        try {
-            printFrame.contentWindow.focus();
-            printFrame.contentWindow.print();
-        } catch (e) {
-            // अगर डायरेक्ट प्रिंट ब्लॉक हो, तो एक बैकअप तरीका
-            window.print();
-        }
-    }, 1000);
-  };
+  // टैब खोलने के बाद इनपुट साफ़ करें
+  uidInput.value = "";
+
+  // नए टैब में प्रिंट कमांड भेजने की कोशिश
+  if (printWin) {
+      status.textContent = "✅ Tab Opened! Press Ctrl+P if print doesn't start.";
+      
+      // यह हिस्सा पेज लोड होने के बाद प्रिंट ट्रिगर करेगा (अगर ब्राउज़र अनुमति दे)
+      printWin.onload = function() {
+          printWin.print();
+      };
+  } else {
+    status.textContent = "❌ Pop-up Blocked! Please allow pop-ups in browser.";
+  }
 }
 
-document.getElementById('uid').addEventListener('keypress', (e) => { if (e.key === 'Enter') printReceipt(); });
+document.getElementById('uid').addEventListener('keypress', (e) => { if (e.key === 'Enter') generateAndPrint(); });
 </script>
 
 </body>
